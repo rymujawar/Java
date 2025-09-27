@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.citi'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+    implementation 'io.rest-assured:rest-assured:5.4.0' //If you're using it outside of test scope:
+    // https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator
+    implementation 'io.rest-assured:json-schema-validator:5.4.0'
+//    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+}
+
+test {
+    useJUnitPlatform()
+}
